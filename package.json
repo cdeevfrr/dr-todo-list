@@ -1,0 +1,17 @@
+{
+    "name": "dr-todo-list",
+    "description": "Todo list for tracking what I've done and rewarding myself points",
+    "version": "0.0.1",
+    "private": true,
+    "license": "none",
+    "author": "cdeevfrr",
+    "engines": {
+      "node": ">=13.0.0"
+    },
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.16.3"
+    }
+  }
