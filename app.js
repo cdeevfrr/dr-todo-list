@@ -27,7 +27,7 @@ app.use(async function (req, res, next) {
 })
 
 app.get('/', async (req, res) => {
-  res.status(200).send(`Main Page!`).end()
+  res.render('mainPage')
 });
 
 for (const tableName in schema){
