@@ -7,10 +7,10 @@ const {ValidationError} = require('./shared')
 
 async function saveRecord({type, data}){
   sanitized = validateAndReshapeRecord({type, data, schema})
-  // await datastore.save({
-  //   key: datastore.key(type),
-  //   data,
-  // })
+  await datastore.save({
+    key: datastore.key(type),
+    data: sanitized,
+  })
 }
 
 async function updateRecord({type, id, data}){
