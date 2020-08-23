@@ -1,0 +1,21 @@
+
+// Existing globals are:
+//   'objectType' (the name of the object in the schema) 
+//   'shape' (the details about the type in the schema)
+//   'objectData'
+//   'errors'
+html
+  head
+  body
+    form(method='POST')
+      each inputShape, key in shape
+        div
+          - if (errors[key]){
+            label(for=key) #{key} (#{errors[key]}):
+          - } else {
+            label(for=key) #{key}:
+          - }
+          input(type=inputShape['type'] id=key name=key value=objectData[key])
+      input(type='submit' value='OK')
+    
+    
