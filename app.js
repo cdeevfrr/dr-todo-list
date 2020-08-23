@@ -31,7 +31,6 @@ app.get('/', async (req, res) => {
 });
 
 for (const tableName in schema){
-  // Create
   app.post(`/create${tableName}` , async (req, res) => {
     console.log(req.body)
     try {
@@ -50,10 +49,12 @@ for (const tableName in schema){
 
     res.render('createObject', {objectType: tableName, objectData: {}, shape: schema[tableName], errors: {}})
   });
-  // Update
-  // Read
-  // Delete
 }
+
+app.get(`/listTasks`, async (req, res) => {
+  // Get the first n tasks sorted by something
+  res.render('listView', {objectType: 'madeUp', objects: [{a:1, b:2, id:0}, {a:5, b:6, id:1}], objectKeys: ['a', 'b']})
+})
  
 // Start the server
 const PORT = process.env.PORT || 8080;

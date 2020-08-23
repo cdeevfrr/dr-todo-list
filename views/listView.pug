@@ -1,0 +1,28 @@
+//   global variables
+// objectType: the name of the object in the schema
+// objects: a list of n objects. Objects must have an 'id' attribute.
+// objectKeys: a list of all possible keys for each object. Doesn't need to include 'ID'.
+html
+  head
+  body
+    div
+     table
+       tr
+         each key in objectKeys
+           th #{key}
+         // the delete button & edit button
+         th 
+         th
+
+       each object in objects
+         tr 
+           each key in objectKeys
+             td #{object[key]}
+           td
+             a(href=`delete${objectType}?${object['id']}`) X
+           td 
+             a(href=`edit${objectType}?${object['id']}`) edit
+    div
+      a(href=`create${objectType}`) +
+        
+
